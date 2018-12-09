@@ -118,36 +118,42 @@ class ClientsController extends AppController
         $id=(int) $this->request->query['id'];
         debug($id);
         $client = $this->Clients->find('all')->where(['users_id ='=>$this->request->query['id']])->first();
-        debug($client);
+        
         if($client->end_abonement==null){
-            echo 'hi';
-        }else{
-            echo $client->end_abonement->format('m-d-Y H:i');
-            echo $time->addMonth(3)->format('m-d-Y H:i');
+            $client->end_abonement=$time;
         }
-        die();
+        if($client->duration_abonement==null){
+            $client->mois_abonne=0;
+        }
+        
         if($this->request->is(['get'])){
             switch ($this->request->query['mois']) {
                 case '1':
-                    
+                    $client->end_abonement=$client->end_abonement->addMonth(1);
+                     $client->mois_abonne=$client->mois_abonne+1;
                     break;
                 case '3':
-                   
+                   $client->end_abonement=$client->end_abonement->addMonth(3);
+                    $client->mois_abonne=$client->mois_abonne+3;
                     break;
                 case '6':
-                   
+                   $client->end_abonement=$client->end_abonement->addMonth(6);
+                    $client->mois_abonne=$client->mois_abonne+6;
                     break;
                 case '12':
-                   
+                   $client->end_abonement=$client->end_abonement->addMonth(12);
+                    $client->mois_abonne=$client->mois_abonne+12;
                     break;
                 default:
-
                     break;
             }
+            $this->Clients->save($client);
+            debug($client);
+            die();
         }
     }
     public function initialize(){
-    parent::initialize();
-    $this->Auth->allow(['paiement', 'add','payer']);
+        parent::initialize();
+        $this->Auth->allow(['paiement', 'add','payer']);
     }
 }
