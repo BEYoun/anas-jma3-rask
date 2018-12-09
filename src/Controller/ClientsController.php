@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-
+use Cake\I18n\Time;
 use App\Controller\AppController;
 
 /**
@@ -57,7 +57,7 @@ class ClientsController extends AppController
         $client = $this->Clients->patchEntity($client, $this->request->getData());
         if ($this->Clients->save($client)) {
             $this->Flash->success(__('The client has been saved.'));
-            return $this->redirect(['action' => 'paiement']);
+            return $this->redirect(['controller'=>'users','action' => 'login']);
         }
         $this->Flash->error(__('The client could not be saved. Please, try again.'));
         
@@ -111,10 +111,43 @@ class ClientsController extends AppController
     }
 
     public function paiement(){
+       
+    }
+    public function payer(){
+        $time = Time::now();
+        $id=(int) $this->request->query['id'];
+        debug($id);
+        $client = $this->Clients->find('all')->where(['users_id ='=>$this->request->query['id']])->first();
+        debug($client);
+        if($client->end_abonement==null){
+            echo 'hi';
+        }else{
+            echo $client->end_abonement->format('m-d-Y H:i');
+            echo $time->addMonth(3)->format('m-d-Y H:i');
+        }
+        die();
+        if($this->request->is(['get'])){
+            switch ($this->request->query['mois']) {
+                case '1':
+                    
+                    break;
+                case '3':
+                   
+                    break;
+                case '6':
+                   
+                    break;
+                case '12':
+                   
+                    break;
+                default:
 
+                    break;
+            }
+        }
     }
     public function initialize(){
     parent::initialize();
-    $this->Auth->allow(['paiement', 'add']);
+    $this->Auth->allow(['paiement', 'add','payer']);
     }
 }
