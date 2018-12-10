@@ -18,12 +18,8 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-    public function index()
-    {
-
-        
+    public function index(){
         $users = $this->paginate($this->Users);
-
         $this->set(compact('users'));
     }
 
@@ -34,12 +30,12 @@ class UsersController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
+
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
             'contain' => []
         ]);
-
         $this->set('user', $user);
     }
 
@@ -48,8 +44,7 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
-    {
+    public function add(){
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
@@ -62,7 +57,9 @@ class UsersController extends AppController
                     ->find()
                     ->select(['id'])
                     ->where(['email =' => $this->request->data['email']])->first();
-                return $this->redirect(['controller' => 'clients','action'=>'add',
+                return $this->redirect([
+                    'controller' => 'clients',
+                    'action'=>'add',
                     '?'=>[
                         'users_id'=>$id['id'],
                         'name'=>$this->request->data['name']

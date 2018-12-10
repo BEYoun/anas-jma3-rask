@@ -1,0 +1,40 @@
+2018-12-10 12:50:44 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db_video.amdines' doesn't exist in C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'amdines', Array, Object(Cake\Database\Schema\TableSchema))
+#1 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('amdines', Array)
+#2 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\ORM\Table.php(555): Cake\Database\Schema\CachedCollection->describe('amdines')
+#3 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\ORM\Table.php(680): Cake\ORM\Table->getSchema()
+#4 C:\xampp\htdocs\montage_moi\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(221): Cake\ORM\Table->getPrimaryKey()
+#5 C:\xampp\htdocs\montage_moi\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(131): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 C:\xampp\htdocs\montage_moi\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(114): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'amdines', 'Amdines')
+#7 C:\xampp\htdocs\montage_moi\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(101): Bake\Shell\Task\ModelTask->bake('Amdines')
+#8 C:\xampp\htdocs\montage_moi\vendor\cakephp\bake\src\Shell\BakeShell.php(273): Bake\Shell\Task\ModelTask->main('Amdines')
+#9 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Collection\CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('Amdines', 0)
+#10 C:\xampp\htdocs\montage_moi\vendor\cakephp\bake\src\Shell\BakeShell.php(274): Cake\Collection\Collection->each(Object(Closure))
+#11 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Console\Shell.php(518): Bake\Shell\BakeShell->all('amdines')
+#12 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Console\CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#13 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Console\CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#14 C:\xampp\htdocs\montage_moi\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#15 {main}
+
+
+2018-12-10 12:50:47 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db_video.amdins' doesn't exist in C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'amdins', Array, Object(Cake\Database\Schema\TableSchema))
+#1 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('amdins', Array)
+#2 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\ORM\Table.php(555): Cake\Database\Schema\CachedCollection->describe('amdins')
+#3 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\ORM\Table.php(680): Cake\ORM\Table->getSchema()
+#4 C:\xampp\htdocs\montage_moi\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(221): Cake\ORM\Table->getPrimaryKey()
+#5 C:\xampp\htdocs\montage_moi\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(131): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 C:\xampp\htdocs\montage_moi\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(114): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'amdins', 'Amdins')
+#7 C:\xampp\htdocs\montage_moi\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(101): Bake\Shell\Task\ModelTask->bake('Amdins')
+#8 C:\xampp\htdocs\montage_moi\vendor\cakephp\bake\src\Shell\BakeShell.php(273): Bake\Shell\Task\ModelTask->main('Amdins')
+#9 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Collection\CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('Amdins', 0)
+#10 C:\xampp\htdocs\montage_moi\vendor\cakephp\bake\src\Shell\BakeShell.php(274): Cake\Collection\Collection->each(Object(Closure))
+#11 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Console\Shell.php(518): Bake\Shell\BakeShell->all('amdins')
+#12 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Console\CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#13 C:\xampp\htdocs\montage_moi\vendor\cakephp\cakephp\src\Console\CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#14 C:\xampp\htdocs\montage_moi\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#15 {main}
+
+

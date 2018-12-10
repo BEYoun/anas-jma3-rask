@@ -306,9 +306,10 @@
 			<!-- <!-- freshdesignweb top bar -->
             <div class="freshdesignweb-top">
                 <span class="right">
-                    <a href=>
-                        <strong>Back to the Home page</strong>
-                    </a>
+                   
+                        <strong><?php echo $this->Html->link('Back to the Home page', '/',['class'=>'download-btn']) ?></strong>
+                    
+
                 </span>
                 <div class="clr"></div>
             </div><!--/ freshdesignweb top bar -->
@@ -371,3 +372,4 @@
     
 </div>
 
+<strong><?php echo $this->Html->link('next', '/users/index',['class'=>'download-btn']) ?></strong>
